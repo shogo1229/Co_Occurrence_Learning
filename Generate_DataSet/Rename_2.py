@@ -8,7 +8,7 @@ def atoi(text):
 def natural_keys(text):
     return [ atoi(c) for c in re.split(r'(\d+)', text) ]
 
-dir_path = r"E:\Research\DataSet\20BN-Jester-6Class\6class_RGB\test"
+dir_path = r""
 dir_list = glob.glob(dir_path+"/*")
 classL = os.listdir(dir_path)
 for x,classlist in enumerate(dir_list):

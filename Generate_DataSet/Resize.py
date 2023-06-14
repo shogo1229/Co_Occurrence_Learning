@@ -30,7 +30,7 @@ class Resize():
 
 
 
-test = Resize(path=r"E:\Research\DataSet\Wild_Life\4th_Season\Image\test\Co-Occurrence")
+test = Resize(path=r"")
 test()
 
 

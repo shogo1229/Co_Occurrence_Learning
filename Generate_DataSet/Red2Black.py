@@ -24,4 +24,4 @@ class Red2Black():
         self.resize(path)
 
 test = Red2Black()
-test(path =r"E:\Research\DataSet\UCF11\val\MHI\Pseudo_MHI\log5_org")
+test(path =r"")

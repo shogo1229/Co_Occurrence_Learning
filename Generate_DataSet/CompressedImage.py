@@ -5,7 +5,7 @@ import pprint as pp
 
 class make_CompressedImage():
     def __init__(self):
-        self.className = ['Background','Bear','Boar','Deer']
+        self.className = []
     def image_path(self,image_path,save_path,org_save_path):
         for x,class_file in enumerate(image_path):
             print("class Name : ",self.className[x])
@@ -27,6 +27,6 @@ class make_CompressedImage():
         self.image_path(glob.glob(image_path+'\*'),save_path,org_save_path)
 
 test = make_CompressedImage()
-test(image_path=r"E:\Research\TwoStreamCNN_2nd-Season\DataSet\GAN\Org_Dataset\val",
-save_path=r"E:\Research\TwoStreamCNN_2nd-Season\DataSet\GAN\Quality5_Dataset\val",
-org_save_path = r"E:\Research\TwoStreamCNN_2nd-Season\DataSet\GAN\Org_saves\val")
+test(image_path=r"",
+save_path=r"",
+org_save_path = r"")

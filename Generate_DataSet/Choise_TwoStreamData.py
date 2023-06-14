@@ -5,10 +5,10 @@ import shutil
 import os
 import re
 
-rgb_folder_path = r'E:\Research\TwoStreamCNN_2nd-Season\DataSet\KTH\Accuracy\ALL\RGB'
-mhi_folder_path = r'E:\Research\TwoStreamCNN_2nd-Season\DataSet\KTH\Accuracy\ALL\MHI'
-rgb_save_path = r'E:\Research\TwoStreamCNN_2nd-Season\DataSet\KTH\Accuracy\choise300\RGB'
-mhi_save_path = r'E:\Research\TwoStreamCNN_2nd-Season\DataSet\KTH\Accuracy\choise300\MHI'
+rgb_folder_path = r''
+mhi_folder_path = r''
+rgb_save_path = r''
+mhi_save_path = r''
 classList = []
 extracts = 300
 

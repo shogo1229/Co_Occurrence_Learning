@@ -15,9 +15,8 @@ class VGG16_Spatial():
 			nn.Linear(4096, 4096),
 			nn.ReLU(True),
 			nn.Dropout(),
-			nn.Linear(4096, 11)              #クラス数
+			nn.Linear(4096, 11)            
 			)
-	# 微分するかしないかみたいなやつ
 	def transGrad(self, Boo):
 		for p in self.model.features.parameters():
 			p.requires_grad = Boo

@@ -34,10 +34,10 @@ class trainval_split():
             self.file_copy(val_list,val_save_directory,i)
         print("done")
 
-split = trainval_split(folder_path=r"E:\Research\DataSet\Wild_Life\4th_Season\Movie")
-split(train_save_directory=r"E:\Research\DataSet\Wild_Life\4th_Season\train",
-        val_save_directory=r"E:\Research\DataSet\Wild_Life\4th_Season\test",
-        folder_path=r"E:\Research\DataSet\Wild_Life\4th_Season\Movie",
+split = trainval_split(folder_path=r"")
+split(train_save_directory=r"",
+        val_save_directory=r"",
+        folder_path=r"",
         split_ratio=0.8)
 
 

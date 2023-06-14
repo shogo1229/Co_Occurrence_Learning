@@ -28,17 +28,8 @@ class Rename():
             elif Rename_Image == True:
                 self.Rename_Image(folder_List,Class,i)
 
-path = r"E:\Research\DataSet\20BN-Jester-6Class\6class_ColorMHI\twostream\train"
+path = r""
 test = Rename(path)
 test(folder_Path= path,Rename_Folder=True,Rename_Image=False)
 test(folder_Path= path,Rename_Folder=False,Rename_Image=True)
 
-path = r"E:\Research\DataSet\20BN-Jester-6Class\6class_ColorMHI\twostream\val"
-test = Rename(path)
-test(folder_Path= path,Rename_Folder=True,Rename_Image=False)
-test(folder_Path= path,Rename_Folder=False,Rename_Image=True)
-
-path = r"E:\Research\DataSet\20BN-Jester-6Class\6class_ColorMHI\twostream\test"
-test = Rename(path)
-test(folder_Path= path,Rename_Folder=True,Rename_Image=False)
-test(folder_Path= path,Rename_Folder=False,Rename_Image=True)

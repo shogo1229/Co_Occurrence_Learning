@@ -68,9 +68,9 @@ class make_stackImage():
 
 
 test = make_stackImage()
-test(RGB_Save_Directory=r"I:\AROB_Journal\Normal_MHI_log5\test\Spatial",
-    MHI_Save_Directory=r"I:\AROB_Journal\Normal_MHI_log5\test\Temporal",
-    Synthetic_Image_Directory = r"I:\AROB_Journal\Normal_MHI_log5\test\Co-Occurrence")
+test(RGB_Save_Directory=r"",
+    MHI_Save_Directory=r"",
+    Synthetic_Image_Directory = r"")
 
 
 

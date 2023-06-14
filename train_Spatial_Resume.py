@@ -151,7 +151,7 @@ if __name__ == '__main__':
         trainLoader = torch.utils.data.DataLoader(train_dataset, batch_size=BatchSize, shuffle=True, num_workers=os.cpu_count(), pin_memory=True)
         valLoader = torch.utils.data.DataLoader(val_dataset, batch_size=BatchSize, shuffle=False, num_workers=os.cpu_count(), pin_memory=True)  # シャッフルk分割
         optimizer = optim.Adam(model.parameters(), lr=LearningRate)
-        checkpoint = torch.load(ResumeModel)
+        checkpoint = torch.load(ResumeModel)        #追加学習したいモデルをロード、optimごと読み込み
         model.load_state_dict(checkpoint['model_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         for state in optimizer.state.values():
