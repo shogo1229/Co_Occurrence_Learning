@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from torch.utils.data import Dataset                  
 from torchvision import datasets, transforms
 from Dataloder.MotionHistory_dataloder import MotionDataset
-from Dataloder.Yuda_MotionHistory_dataloder import MotionHistory_Dataset
+from Dataloder.ver2_MotionHistory_dataloder import MotionHistory_Dataset
 from torch.autograd import Variable
 from PIL import Image
 from statistics import mean

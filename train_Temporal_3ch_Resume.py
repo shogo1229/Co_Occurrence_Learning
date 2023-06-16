@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from torch.utils.data import Dataset                  
 from torchvision import datasets, transforms
-from Dataloder import Yuda_Pseudo_MotionHistory_dataloder
+from Dataloder import ver2_Pseudo_MotionHistory_dataloder
 from torch.autograd import Variable
 from PIL import Image
 from statistics import mean
