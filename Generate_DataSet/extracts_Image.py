@@ -45,6 +45,6 @@ class extractImage():
             self.extracts_Image(image_class,Save_directory,i)
 
 test = extractImage()
-test(folder_path=r"E:\Research\DataSet\Wild_Life\3rd_Season\Image\train\RGB\train"
-    ,Save_directory=r"E:\Research\DataSet\Wild_Life\3rd_Season\Image\train\RGB_5000")
+test(folder_path=r""
+    ,Save_directory=r"")
 

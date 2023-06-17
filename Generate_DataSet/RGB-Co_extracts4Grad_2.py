@@ -46,10 +46,10 @@ class extractImage():
             self.extracts_Image(rgb_folderList, Co_folderList, RGB_SavePath, Co_SavePath, idx)  # 画像の抽出とコピーを実行
 
 if __name__ == '__main__':
-    test = extractImage(RGBpath=r"E:\Research\DataSet\20BN-Jester-6Class\6class_RGB\test",
-                        CoPath=r"E:\Research\DataSet\20BN-Jester-6Class\6class_Synthetic\test")
+    test = extractImage(RGBpath=r"",
+                        CoPath=r"")
 
-    test(RGB_Images=r"E:\Research\DataSet\20BN-Jester-6Class\6class_RGB\test",
-         Co_Images=r"E:\Research\DataSet\20BN-Jester-6Class\6class_Synthetic\test",
-         RGB_SavePath=r"E:\Research\DataSet\20BN-Jester-6Class_Grad\GradTest500_RGB",
-         Co_SavePath=r"E:\Research\DataSet\20BN-Jester-6Class_Grad\GradTest500_Syntetic")
+    test(RGB_Images=r"",
+         Co_Images=r"",
+         RGB_SavePath=r"",
+         Co_SavePath=r"")

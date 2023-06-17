@@ -48,6 +48,6 @@ class make_stackImage():
         self.Synthetic_Image(RGB_Images,MHI_Images,Synthetic_Image_Directory,DisplayFlag)
 
 test = make_stackImage()
-test(RGB_Save_Directory=r"E:\Research\TwoStreamCNN_2nd-Season\DataSet\KTH\Accuracy\choise300\RGB",
-    MHI_Save_Directory=r"E:\Research\TwoStreamCNN_2nd-Season\DataSet\KTH\Accuracy\choise300\MHI",
-    Synthetic_Image_Directory = r"E:\Research\TwoStreamCNN_2nd-Season\DataSet\KTH\Accuracy\choise300\Synthetic")
+test(RGB_Save_Directory=r"",
+    MHI_Save_Directory=r"",
+    Synthetic_Image_Directory = r"")

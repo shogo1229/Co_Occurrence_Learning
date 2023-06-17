@@ -16,7 +16,7 @@ from itertools import count
 from pprint import pprint
 from sklearn.metrics import classification_report
 from Dataloder.MotionHistory_dataloder import MotionDataset
-from Dataloder.ver2_MotionHistory_dataloder import MotionHistory_Dataset
+from Dataloder.MotionHistory_dataloder import MotionHistory_Dataset
 #from Dataloder.Pseudo_MotionHistory_dataloder import MotionDataset
 from torchvision import datasets, transforms, models
 from PIL import Image

@@ -34,9 +34,9 @@ from torchvision.io.image import read_image
 from torchvision.transforms.functional import normalize, resize, to_pil_image
 
 # モデルのパスとデータセットのパス、出力ファイル名を指定
-modelPath = r"F:\研究関連\TwoStreamCNN_2nd-Season\Models\MobileNet_C-CoOcc_AROB-Journal\MobileNet_C-CoOcc_AROB-Journal_max-Acc.pth"
-dataset = r"F:\AROB_Journal\20BN_Jester-2000Grad\C-CoOcc"
-modelName = r"C-CoOcc_AROB-Journal_max-Acc"
+modelPath = r""
+dataset = r""
+modelName = r""
 
 # 画像の前処理を定義
 transform = transforms.Compose([

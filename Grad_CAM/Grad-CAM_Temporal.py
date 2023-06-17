@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 from torch.utils.data import Dataset
 from torchvision import datasets, transforms
 from torch.utils.data import Dataset, DataLoader
-from Dataloder.ver2_MotionHistory_dataloder import MotionHistory_Dataset
+from Dataloder.MotionHistory_dataloder import MotionHistory_Dataset
 from torch.utils.data.dataset import Subset
 from sklearn.model_selection import StratifiedKFold
 from torchvision import models
@@ -35,9 +35,9 @@ from torchvision.io.image import read_image
 from torchvision.transforms.functional import normalize, resize, to_pil_image
 
 # モデルのパスとデータセットのパス、モデルの名前を定義
-modelPath = r"E:\Research\TwoStreamCNN_2nd-Season\Models\max_Val_acc_MobileNet_MHI_Wild-Life4th_part1\Fold-0_max_Val_acc_MobileNet_MHI_Wild-Life4th_part1.pth"
-dataset = r"E:\Research\DataSet\Wild_Life\4th_Season\Image\train\MHI"
-modelName = r"Fold-0_max_Val_acc_MobileNet_Co-Occurrence_Wild-Life4th_part1"
+modelPath = r""
+dataset = r""
+modelName = r""
 
 # 画像の前処理を定義
 transform = transforms.Compose([

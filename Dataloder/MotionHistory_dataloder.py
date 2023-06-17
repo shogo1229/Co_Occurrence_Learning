@@ -4,9 +4,11 @@ import torchvision.transforms as transforms
 from PIL import Image
 from itertools import chain
 import collections
+import pprint as pp
 
-class MotionDataset(torch.utils.data.Dataset):
-	def __init__(self, _imgPaths, _transform=None, _inChannels = 10, _imgHeight=224, _imgWidth=224):
+
+class MotionHistory_Dataset(torch.utils.data.Dataset):
+	def __init__(self, _imgPaths, _transform=None, _inChannels=5, _imgHeight=224, _imgWidth=224):
 		self.Transform = _transform
 		self.ImagePaths = _imgPaths
 		self.LabelPaths = None
@@ -14,6 +16,7 @@ class MotionDataset(torch.utils.data.Dataset):
 		self.Labels = None
 		self.LabelName = None
 		self.InChannels = _inChannels
+		self.step = _inChannels
 		self.FlowLabel = []
 		self.FlowPaths = []
 		self.SumDataset()
@@ -23,33 +26,44 @@ class MotionDataset(torch.utils.data.Dataset):
 		self.LabelCounter = sorted(collections.Counter(self.FlowLabel).items())
 		self.Height = _imgHeight
 		self.Width = _imgWidth
-	
+
 	def SumDataset(self):
 		self.LabelPaths = glob.glob(self.ImagePaths+r"/**")
-		self.Labels = [f.replace(self.ImagePaths+r"\v_", "").split("_")[0] for f in self.LabelPaths]
+		self.Labels = self.LabelPaths
 		self.LabelName = list(set(self.Labels))
 		self.LabelName.sort()
 		self.LabelsIndex = [self.LabelName.index(f) for f in self.Labels]
-		for i, l in enumerate(self.LabelPaths):
-			flowSum = int(len(glob.glob(l+"/*"))/self.InChannels)
-			self.FlowLabel.append([self.LabelsIndex[i]]*flowSum)
-			self.FlowPaths.append([l+"/frame{}.jpg".format(str(idx).zfill(6))for idx in range(0, flowSum*self.InChannels)])
+		for idx, label in enumerate(self.LabelPaths):
+			for i, l in enumerate(glob.glob(label+r"/*")):
+				flowSum = int(len(glob.glob(l+"/*"))/self.InChannels)
+				FList = glob.glob(l+"/*")
+				self.FlowLabel.append([self.LabelsIndex[idx]]*(len(glob.glob(l+"/*"))-(self.step-1)))
+				for g in range(len(glob.glob(l+"/*"))-(self.step-1)):
+					L = []
+					for x in range(g,g+self.step):
+						L.append(FList[x])
+					self.FlowPaths.append(L)
+		#pp.pprint(self.FlowLabel)
+		#pp.pprint(self.FlowPaths)
+		#print(len(self.FlowLabel),len(self.FlowPaths))
 
 	def __getitem__(self, index):
-		xImage = None
+		MHI = None
+		self.checkList =[]
 		label = self.FlowLabel[index]
 		mhi = torch.FloatTensor(self.InChannels, self.Height, self.Width)
 		for channel in range(self.InChannels):
 			idx = index*self.InChannels+channel
 			xImagePath = self.FlowPaths[idx]
 			with open(xImagePath, "rb") as f:
-				xImage = Image.open(f)
-				xImage = xImage.convert('L')			#L グレースケール変換 RGB 8bit×3
+				MHI = Image.open(f)
+				MHI = MHI.convert('L')			#L グレースケール変換 RGB 8bit×3
 			if self.Transform:
-				xImage = self.Transform(xImage)
-			mhi[(channel),:,:] = xImage
+				MHI = self.Transform(MHI)
+			mhi[(channel),:,:] = MHI
 		sample = (mhi, label)
 		return sample
 
 	def __len__(self):
 		return len(self.FlowLabel)
+
